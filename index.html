@@ -67,7 +67,14 @@ nav.links a:hover{color:var(--rose-deep)}
 .lang-toggle{border:1px solid var(--rose);border-radius:999px;background:var(--porcelain);display:flex;overflow:hidden;flex:none;align-self:center}
 .lang-toggle button{border:0;background:transparent;padding:4px 13px;font-family:var(--sans);font-size:.78rem;cursor:pointer;color:var(--rose-deep)}
 .lang-toggle button[aria-pressed="true"]{background:var(--rose);color:#fff}
-@media(max-width:900px){nav.links{display:none}}
+.menu-btn{display:none;border:1px solid var(--rose);background:var(--porcelain);color:var(--rose-deep);border-radius:8px;padding:4px 12px;font-size:1.05rem;cursor:pointer;align-self:center;line-height:1.4}
+@media(max-width:900px){
+  .menu-btn{display:block;margin-left:auto}
+  nav.links{display:none;order:10;width:100%;flex-direction:column;gap:0;border-top:1px solid var(--line);margin-top:10px;padding-top:6px}
+  header.mast.open nav.links{display:flex}
+  nav.links a{padding:12px 4px;border-bottom:1px dashed var(--line);font-size:.88rem}
+  nav.links a:last-child{border-bottom:0}
+}
 
 /* ---------- Hero ---------- */
 .hero{border-bottom:1px solid var(--line)}
@@ -103,10 +110,11 @@ section{padding:72px 0}
 /* ---------- About ---------- */
 .about-grid{display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:start}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr}}
-.about-photo{position:relative}
-.about-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%}
-.about-photo::after{content:"";position:absolute;inset:14px;border:1px solid rgba(246,238,233,.85);pointer-events:none}
-.about-photo figcaption{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px}
+.about-photo{display:flex;flex-direction:column;align-items:center;padding-top:8px}
+.about-photo img{
+  width:min(300px,78%);aspect-ratio:1;border-radius:50%;object-fit:cover;
+  box-shadow:0 0 0 12px var(--blush),0 0 0 13px var(--gold-soft);
+}
 .about-copy p{margin-bottom:16px;color:#4A3A42}
 .about-facts{margin-top:26px;border-top:1px solid var(--line)}
 .fact{display:flex;gap:14px;align-items:baseline;font-size:.9rem;padding:10px 0;border-bottom:1px dashed var(--line)}
@@ -170,20 +178,11 @@ td.price{font-family:var(--serif);font-size:1.1rem;font-weight:500;white-space:n
 .policy li::before{content:"·";color:var(--gold);position:absolute;left:2px;font-weight:700}
 
 /* ---------- Gallery ---------- */
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;grid-auto-rows:150px;grid-auto-flow:dense}
-@media(max-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}}
-.gallery figure{position:relative;overflow:hidden;margin:0}
-.gallery figure.tall{grid-row:span 2}
-.gallery figure.wide{grid-column:span 2}
-.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
-.gallery figure:hover img{transform:scale(1.03)}
-.gallery figcaption{
-  position:absolute;left:0;right:0;bottom:0;
-  background:linear-gradient(transparent,rgba(51,35,43,.72));
-  color:#F6EEE9;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
-  padding:26px 12px 10px;
-}
+.gallery{columns:3;column-gap:14px}
+@media(max-width:900px){.gallery{columns:2}}
+.gallery figure{margin:0 0 14px;break-inside:avoid;overflow:hidden;border:1px solid var(--line);background:var(--porcelain)}
+.gallery img{width:100%;height:auto;display:block;transition:transform .3s ease}
+.gallery figure:hover img{transform:scale(1.02)}
 
 /* ---------- FAQ ---------- */
 .faq{max-width:760px;margin:0 auto;padding:0 24px}
@@ -197,19 +196,20 @@ body.zh .faq summary{font-family:var(--serif-zh)}
 
 /* ---------- Contact ---------- */
 #contact{background:var(--porcelain);border-top:1px solid var(--line)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
-@media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--line)}
 .contact-card{padding:38px 36px;background:var(--paper)}
-.contact-card + .contact-card{border-left:1px solid var(--line)}
-@media(max-width:820px){.contact-card + .contact-card{border-left:0;border-top:1px solid var(--line)}}
+.contact-card + .contact-card{border-top:1px solid var(--line)}
+@media(max-width:560px){.contact-card{padding:28px 18px}}
 .contact-card h3{font-size:1.35rem;font-weight:500;margin-bottom:20px;border-bottom:2px solid var(--rose);padding-bottom:10px}
-.contact-list{list-style:none;display:grid;gap:16px;font-size:.95rem}
+.contact-list{list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;font-size:.95rem}
 .contact-list a{text-decoration:none}
 .contact-list a:hover{text-decoration:underline}
 .contact-list .lbl{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
 .contact-card .enquiry-copy{color:#4A3A42;font-size:.93rem;margin-bottom:22px}
-.contact-card .btn-primary{margin-bottom:14px}
 .contact-card .small{font-size:.82rem;color:var(--ink-soft)}
+.form-frame{border:1px solid var(--line);border-top:2px solid var(--rose);background:var(--porcelain);padding:8px}
+.form-frame iframe{display:block;width:100%;height:980px;border:0}
+.form-fallback{font-size:.82rem;color:var(--ink-soft);margin-top:12px}
 
 /* ---------- Footer ---------- */
 footer.site{border-top:2px solid var(--rose);padding:38px 24px;text-align:center;color:var(--ink-soft);font-size:.85rem}
@@ -231,6 +231,7 @@ footer.site .name{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08e
       <a href="#gallery"><span class="en-only">Gallery</span><span class="zh-only">影像</span></a>
       <a href="#contact"><span class="en-only">Contact</span><span class="zh-only">聯絡</span></a>
     </nav>
+    <button type="button" class="menu-btn" aria-expanded="false" aria-label="Menu" onclick="toggleMenu(this)">☰</button>
     <div class="lang-toggle" role="group" aria-label="Language">
       <button type="button" id="btn-en" aria-pressed="true" onclick="setLang('en')">EN</button>
       <button type="button" id="btn-zh" aria-pressed="false" onclick="setLang('zh')">中文</button>
@@ -287,8 +288,7 @@ footer.site .name{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08e
   <div class="wrap">
     <div class="about-grid">
       <figure class="about-photo">
-        <img src="images/portrait-black.jpg" alt="Giana Yeung standing on stage in a black dress before a performance">
-        <figcaption><span class="en-only">On stage, London 2025</span><span class="zh-only">倫敦演出 · 2025</span></figcaption>
+        <img src="images/about-portrait.jpg" alt="Portrait of Giana Yeung">
       </figure>
       <div class="about-copy">
         <p class="en-only">Giana Yeung is a Southampton-based vocalist and guzheng artist working across classical, musical theatre and pop traditions. Trained in vocal performance at the University of Southampton and in guzheng at the Central Conservatory of Music, she brings two musical worlds — Western vocal artistry and the 2,500-year-old Chinese zither — into one teaching studio.</p>
@@ -523,58 +523,20 @@ footer.site .name{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08e
   </div>
   <div class="wrap">
     <div class="gallery">
-      <figure class="tall">
-        <img src="images/stage-navy-01.jpg" alt="Giana singing solo under a spotlight in a navy dress" loading="lazy">
-        <figcaption><span class="en-only">Solo recital, London</span><span class="zh-only">獨唱演出 · 倫敦</span></figcaption>
-      </figure>
-      <figure class="wide">
-        <img src="images/guzheng-01.jpg" alt="Giana performing on the guzheng" loading="lazy">
-        <figcaption><span class="en-only">Guzheng performance 古箏</span><span class="zh-only">古箏演出</span></figcaption>
-      </figure>
-      <figure class="tall">
-        <img src="images/band-green-03.jpg" alt="Giana singing with a live band in a green dress" loading="lazy">
-        <figcaption><span class="en-only">Live with band</span><span class="zh-only">樂隊現場</span></figcaption>
-      </figure>
-      <figure>
-        <img src="images/guzheng-02.jpg" alt="Giana playing the guzheng in concert" loading="lazy">
-        <figcaption><span class="en-only">Guzheng 古箏</span><span class="zh-only">古箏</span></figcaption>
-      </figure>
-      <figure class="tall">
-        <img src="images/stage-navy-02.jpg" alt="Giana singing on a theatre stage" loading="lazy">
-        <figcaption><span class="en-only">On stage, London</span><span class="zh-only">舞台演出 · 倫敦</span></figcaption>
-      </figure>
-      <figure class="wide">
-        <img src="images/band-green-01.jpg" alt="Giana fronting a full live band" loading="lazy">
-        <figcaption><span class="en-only">Full band session</span><span class="zh-only">樂隊演出</span></figcaption>
-      </figure>
-      <figure class="tall">
-        <img src="images/band-green-04.jpg" alt="Giana performing live with a band" loading="lazy">
-        <figcaption><span class="en-only">Live performance</span><span class="zh-only">現場演出</span></figcaption>
-      </figure>
-      <figure>
-        <img src="images/stage-motion-01.jpg" alt="Atmospheric stage shot of Giana performing" loading="lazy">
-        <figcaption><span class="en-only">In motion</span><span class="zh-only">光影之間</span></figcaption>
-      </figure>
-      <figure class="tall">
-        <img src="images/guzheng-03.jpg" alt="Giana tuning the guzheng before a performance" loading="lazy">
-        <figcaption><span class="en-only">Before the music</span><span class="zh-only">演出之前</span></figcaption>
-      </figure>
-      <figure class="wide">
-        <img src="images/band-tweed.jpg" alt="Giana singing with guitarists at a London venue" loading="lazy">
-        <figcaption><span class="en-only">Band night, London</span><span class="zh-only">樂隊之夜 · 倫敦</span></figcaption>
-      </figure>
-      <figure class="tall">
-        <img src="images/band-green-02.jpg" alt="Giana singing with her band on a blue-lit stage" loading="lazy">
-        <figcaption><span class="en-only">Live with band</span><span class="zh-only">樂隊現場</span></figcaption>
-      </figure>
-      <figure>
-        <img src="images/stage-motion-02.jpg" alt="Long-exposure stage image of Giana singing" loading="lazy">
-        <figcaption><span class="en-only">In motion</span><span class="zh-only">光影之間</span></figcaption>
-      </figure>
-      <figure class="tall">
-        <img src="images/early-years.jpg" alt="A young Giana singing solo with a school choir in Hong Kong" loading="lazy">
-        <figcaption><span class="en-only">Where it began — Hong Kong</span><span class="zh-only">一切的開始 · 香港</span></figcaption>
-      </figure>
+      <figure><img src="images/stage-navy-01.jpg" alt="Giana singing solo under a spotlight in a navy dress" loading="lazy"></figure>
+      <figure><img src="images/guzheng-01.jpg" alt="Giana performing on the guzheng" loading="lazy"></figure>
+      <figure><img src="images/band-green-03.jpg" alt="Giana singing with a live band in a green dress" loading="lazy"></figure>
+      <figure><img src="images/band-tweed.jpg" alt="Giana singing with guitarists at a London venue" loading="lazy"></figure>
+      <figure><img src="images/guzheng-02.jpg" alt="Giana playing the guzheng in concert" loading="lazy"></figure>
+      <figure><img src="images/stage-navy-02.jpg" alt="Giana singing on a theatre stage" loading="lazy"></figure>
+      <figure><img src="images/band-green-01.jpg" alt="Giana fronting a full live band" loading="lazy"></figure>
+      <figure><img src="images/portrait-black.jpg" alt="Giana standing on stage in a black dress" loading="lazy"></figure>
+      <figure><img src="images/band-green-04.jpg" alt="Giana performing live with a band" loading="lazy"></figure>
+      <figure><img src="images/guzheng-03.jpg" alt="Giana tuning the guzheng before a performance" loading="lazy"></figure>
+      <figure><img src="images/stage-motion-01.jpg" alt="Atmospheric stage shot of Giana performing" loading="lazy"></figure>
+      <figure><img src="images/band-green-02.jpg" alt="Giana singing with her band on a blue-lit stage" loading="lazy"></figure>
+      <figure><img src="images/stage-motion-02.jpg" alt="Long-exposure stage image of Giana singing" loading="lazy"></figure>
+      <figure><img src="images/early-years.jpg" alt="A young Giana singing solo with a school choir in Hong Kong" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -639,13 +601,14 @@ footer.site .name{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08e
           <span class="en-only">Start with a 30-minute taster &amp; assessment (£20), or just say hello — tell me a little about yourself and the lessons you're interested in, and I'll get back to you.</span>
           <span class="zh-only">由 30 分鐘體驗及評估課（£20）開始，或先來打個招呼 — 簡單介紹一下自己和有興趣的課程，我會盡快回覆。</span>
         </p>
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScktcbq8MN54omGZ3YLSHjaMxyiByJF_ip4aVP_C5UB-DQeSw/viewform" target="_blank" rel="noopener">
-          <span class="en-only">Open enquiry form</span>
-          <span class="zh-only">開啟查詢表格</span>
-        </a>
-        <p class="small">
-          <span class="en-only">Or email me directly — whichever is easier.</span>
-          <span class="zh-only">或直接電郵給我，兩者皆可。</span>
+        <div class="form-frame">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScktcbq8MN54omGZ3YLSHjaMxyiByJF_ip4aVP_C5UB-DQeSw/viewform?embedded=true" loading="lazy" title="Enquiry form">
+            <span class="en-only">Loading…</span><span class="zh-only">載入中⋯</span>
+          </iframe>
+        </div>
+        <p class="form-fallback">
+          <span class="en-only">Form not loading? <a href="https://docs.google.com/forms/d/e/1FAIpQLScktcbq8MN54omGZ3YLSHjaMxyiByJF_ip4aVP_C5UB-DQeSw/viewform" target="_blank" rel="noopener">Open it in a new tab</a> — or email me directly, whichever is easier.</span>
+          <span class="zh-only">表格未能載入？<a href="https://docs.google.com/forms/d/e/1FAIpQLScktcbq8MN54omGZ3YLSHjaMxyiByJF_ip4aVP_C5UB-DQeSw/viewform" target="_blank" rel="noopener">於新分頁開啟</a>，或直接電郵給我，兩者皆可。</span>
         </p>
       </div>
     </div>
@@ -674,6 +637,16 @@ try{
   var saved = localStorage.getItem('giana-lang');
   if(saved==='zh') setLang('zh');
 }catch(e){}
+function toggleMenu(btn){
+  var open = document.querySelector('header.mast').classList.toggle('open');
+  btn.setAttribute('aria-expanded', open);
+}
+document.querySelectorAll('nav.links a').forEach(function(a){
+  a.addEventListener('click', function(){
+    document.querySelector('header.mast').classList.remove('open');
+    document.querySelector('.menu-btn').setAttribute('aria-expanded','false');
+  });
+});
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 </body>
