@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giana Yeung · Singing &amp; Guzheng Lessons · Southampton</title>
+<title>Giana Yeung · Singing &amp; Guzheng Studio · Southampton</title>
 <meta name="description" content="Patient, encouraging singing (classical, musical theatre, pop) and guzheng lessons in Southampton and online worldwide. Exams, hobby or confidence — every student welcome.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&family=Noto+Serif+TC:wght@500;600&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&family=Noto+Sans+TC:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --paper:#F6EEE9;
@@ -20,9 +20,9 @@
   --gold-soft:#D8BC93;
   --blush:#F3DFDE;
   --line:#E8D8D2;
-  --serif:"Cormorant Garamond","Noto Serif TC",serif;
-  --serif-zh:"Noto Serif TC","Cormorant Garamond",serif;
-  --sans:"Source Sans 3","Noto Sans TC",sans-serif;
+  --serif:"Fraunces","Noto Serif TC",serif;
+  --serif-zh:"Noto Serif TC","Fraunces",serif;
+  --sans:"Archivo","Noto Sans TC",sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -34,237 +34,201 @@ body{
   background:var(--paper);
   color:var(--ink);
   font-family:var(--sans);
-  font-size:17px;
-  line-height:1.65;
+  font-size:16px;
+  line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
-/* ---------- Language toggle ---------- */
 .zh-only{display:none}
 body.zh .zh-only{display:revert}
 body.zh .en-only{display:none}
-body.zh{font-family:var(--sans)}
-body.zh h1,body.zh h2,body.zh h3,body.zh .serif{font-family:var(--serif-zh)}
 h1,h2,h3,.serif{font-family:var(--serif)}
+body.zh h1,body.zh h2,body.zh h3,body.zh .serif{font-family:var(--serif-zh)}
 img{max-width:100%;display:block}
 a{color:var(--rose-deep)}
-:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
 
-.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.kicker{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rose)}
+body.zh .kicker{letter-spacing:.42em}
 
-/* ---------- Nav ---------- */
-header.nav{
+/* ---------- Masthead ---------- */
+header.mast{
   position:sticky;top:0;z-index:50;
-  background:rgba(246,238,233,.92);
+  background:rgba(246,238,233,.94);
   backdrop-filter:blur(8px);
-  border-bottom:1px solid var(--line);
+  border-bottom:2px solid var(--rose);
 }
-.nav-inner{display:flex;align-items:center;gap:20px;padding:14px 24px;max-width:1060px;margin:0 auto}
-.brand{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:.02em;white-space:nowrap}
-.brand em{font-style:normal;color:var(--rose)}
-nav.links{margin-left:auto;display:flex;gap:22px;flex-wrap:wrap}
-nav.links a{text-decoration:none;color:var(--ink-soft);font-size:.95rem;letter-spacing:.04em}
+.mast-inner{display:flex;align-items:baseline;gap:16px;padding:15px 24px;max-width:1080px;margin:0 auto;flex-wrap:wrap}
+.brand{font-family:var(--serif);font-size:1.15rem;letter-spacing:.06em;color:var(--ink);text-decoration:none;font-weight:500;white-space:nowrap}
+.brand-sub{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);white-space:nowrap}
+nav.links{margin-left:auto;display:flex;gap:4px;flex-wrap:wrap}
+nav.links a{text-decoration:none;color:var(--ink-soft);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px}
 nav.links a:hover{color:var(--rose-deep)}
-.lang-toggle{
-  margin-left:8px;border:1px solid var(--gold-soft);border-radius:999px;
-  background:var(--porcelain);display:flex;overflow:hidden;flex:none;
-}
-.lang-toggle button{
-  border:0;background:transparent;padding:6px 14px;font-family:var(--sans);
-  font-size:.85rem;cursor:pointer;color:var(--ink-soft);
-}
+.lang-toggle{border:1px solid var(--rose);border-radius:999px;background:var(--porcelain);display:flex;overflow:hidden;flex:none;align-self:center}
+.lang-toggle button{border:0;background:transparent;padding:4px 13px;font-family:var(--sans);font-size:.78rem;cursor:pointer;color:var(--rose-deep)}
 .lang-toggle button[aria-pressed="true"]{background:var(--rose);color:#fff}
-@media(max-width:760px){nav.links{display:none}}
+@media(max-width:900px){nav.links{display:none}}
 
-/* ---------- Hero with guzheng strings ---------- */
-.hero{position:relative;overflow:hidden;text-align:center;padding:92px 24px 84px}
-.strings{position:absolute;inset:0;pointer-events:none;opacity:.5}
-.strings svg{width:100%;height:100%}
-.hero-inner{position:relative;max-width:760px;margin:0 auto}
-.eyebrow{
-  display:inline-block;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--rose);border-bottom:1px solid var(--gold-soft);padding-bottom:8px;margin-bottom:26px;
-}
-body.zh .eyebrow{letter-spacing:.35em}
-.hero h1{font-size:clamp(2.6rem,7vw,4.4rem);font-weight:500;line-height:1.08;margin-bottom:10px}
-.hero .role{font-family:var(--serif);font-style:italic;font-size:clamp(1.15rem,2.6vw,1.5rem);color:var(--rose-deep);margin-bottom:18px}
-body.zh .hero .role{font-style:normal}
-.hero .tagline{color:var(--ink-soft);max-width:520px;margin:0 auto 30px}
-.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
-.btn{
-  display:inline-block;text-decoration:none;border-radius:999px;padding:13px 28px;
-  font-size:.98rem;letter-spacing:.03em;transition:transform .15s ease,box-shadow .15s ease;
-}
+/* ---------- Hero ---------- */
+.hero{border-bottom:1px solid var(--line)}
+.hero-grid{display:grid;grid-template-columns:2fr 1fr;max-width:1080px;margin:0 auto}
+@media(max-width:820px){.hero-grid{grid-template-columns:1fr}}
+.hero-main{padding:64px 40px 60px 24px;position:relative;border-right:1px solid var(--line)}
+@media(max-width:820px){.hero-main{border-right:0;padding:52px 24px 44px}}
+.staff{position:absolute;left:24px;right:40px;top:34px}
+.staff div{height:1px;background:var(--gold-soft);margin-bottom:6px}
+.hero-main .kicker{display:block;margin:34px 0 18px;position:relative}
+.hero-main h1{font-size:clamp(2.3rem,5.5vw,3.4rem);font-weight:400;line-height:1.12;margin-bottom:14px}
+.hero-main h1 em{color:var(--rose);font-style:italic}
+body.zh .hero-main h1 em{font-style:normal}
+.hero-main .lede{color:var(--ink-soft);max-width:430px;margin-bottom:26px}
+.btn{display:inline-block;text-decoration:none;border-radius:999px;padding:12px 26px;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;transition:transform .15s ease}
 .btn:hover{transform:translateY(-1px)}
-.btn-primary{background:var(--rose);color:#fff;box-shadow:0 6px 18px rgba(166,81,106,.28)}
+.btn-primary{background:var(--rose);color:#F6EEE9}
 .btn-primary:hover{background:var(--rose-deep)}
-.btn-ghost{border:1px solid var(--gold-soft);color:var(--ink);background:var(--porcelain)}
-.creds{font-size:.88rem;color:var(--ink-soft);line-height:1.9}
-.creds span{white-space:nowrap}
-.creds .dot{color:var(--gold);margin:0 8px}
+.btn-ghost{color:var(--rose-deep);border-bottom:1px solid var(--gold-soft);border-radius:0;padding:12px 6px}
+.hero-side{background:var(--blush);padding:44px 30px}
+.hero-side h2{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--rose-deep);font-family:var(--sans);font-weight:600;border-bottom:1px solid var(--rose);padding-bottom:10px;margin-bottom:16px}
+.hero-side p{font-size:.85rem;line-height:1.75;color:#4A3A42;margin-bottom:12px}
+.hero-side .langs{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:.85rem}
+body.zh .hero-side .langs{font-style:normal;font-family:var(--serif-zh)}
 
 /* ---------- Sections ---------- */
-section{padding:74px 0}
-.section-head{text-align:center;max-width:640px;margin:0 auto 46px}
-.kicker{font-size:.78rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:12px}
-body.zh .kicker{letter-spacing:.4em}
-.section-head h2{font-size:clamp(1.9rem,4.5vw,2.6rem);font-weight:500;margin-bottom:12px}
-.section-head p{color:var(--ink-soft)}
-.rule{width:56px;height:1px;background:var(--gold-soft);margin:18px auto 0}
+section{padding:72px 0}
+.section-head{max-width:1080px;margin:0 auto 42px;padding:0 24px;display:flex;align-items:baseline;gap:18px;border-bottom:2px solid var(--rose);padding-bottom:12px;flex-wrap:wrap}
+.section-head h2{font-size:clamp(1.6rem,3.6vw,2.2rem);font-weight:500}
+.section-head .kicker{margin-left:auto}
+.section-note{max-width:1080px;margin:-28px auto 40px;padding:0 24px;color:var(--ink-soft);font-size:.92rem}
 
 /* ---------- About ---------- */
-.about-grid{display:grid;grid-template-columns:340px 1fr;gap:48px;align-items:start}
-@media(max-width:820px){.about-grid{grid-template-columns:1fr}}
-.portrait{
-  aspect-ratio:4/5;border-radius:180px 180px 14px 14px;
-  background:linear-gradient(160deg,var(--blush),#EAD3CE 60%,var(--gold-soft));
-  border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  color:var(--rose-deep);font-family:var(--serif);font-style:italic;padding:24px;
-}
+.about-grid{display:grid;grid-template-columns:360px 1fr;gap:48px;align-items:start}
+@media(max-width:860px){.about-grid{grid-template-columns:1fr}}
+.about-photo{position:relative}
+.about-photo img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%}
+.about-photo::after{content:"";position:absolute;inset:14px;border:1px solid rgba(246,238,233,.85);pointer-events:none}
+.about-photo figcaption{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin-top:10px}
 .about-copy p{margin-bottom:16px;color:#4A3A42}
-.about-copy .ph{color:var(--ink-soft);font-style:italic}
-.about-facts{margin-top:22px;display:grid;gap:10px}
-.fact{display:flex;gap:12px;align-items:baseline;font-size:.95rem}
-.fact::before{content:"—";color:var(--gold)}
+.about-facts{margin-top:26px;border-top:1px solid var(--line)}
+.fact{display:flex;gap:14px;align-items:baseline;font-size:.9rem;padding:10px 0;border-bottom:1px dashed var(--line)}
+.fact .num{font-size:.72rem;letter-spacing:.14em;color:var(--gold);flex:none;width:24px}
 
 /* ---------- Lessons ---------- */
-.lesson-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.lesson-card{
-  background:var(--porcelain);border:1px solid var(--line);border-radius:16px;
-  padding:30px 26px;position:relative;overflow:hidden;
-}
-.lesson-card::after{
-  content:"";position:absolute;left:26px;right:26px;top:0;height:3px;
-  background:linear-gradient(90deg,var(--rose),var(--gold-soft));border-radius:0 0 4px 4px;
-}
-.lesson-card h3{font-size:1.45rem;font-weight:600;margin-bottom:4px}
-.lesson-card .zh-sub{color:var(--gold);font-size:.95rem;margin-bottom:12px;font-family:var(--serif-zh)}
-.lesson-card p{font-size:.95rem;color:var(--ink-soft)}
-.lesson-card ul{margin-top:12px;padding-left:0;list-style:none;font-size:.92rem;color:#4A3A42}
-.lesson-card li{padding:4px 0;border-top:1px dashed var(--line)}
-.formats{margin-top:34px;text-align:center;color:var(--ink-soft);font-size:.95rem}
+#lessons{background:var(--porcelain);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.lesson-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--porcelain)}
+@media(max-width:900px){.lesson-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.lesson-grid{grid-template-columns:1fr}}
+.lesson{padding:28px 24px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.lesson:last-child{background:var(--blush)}
+.lesson .num{font-size:.72rem;letter-spacing:.14em;color:var(--gold);display:block;margin-bottom:8px}
+.lesson h3{font-size:1.25rem;font-weight:500;margin-bottom:8px}
+.lesson:last-child h3{color:var(--rose-deep)}
+.lesson p{font-size:.88rem;color:var(--ink-soft);margin-bottom:10px}
+.lesson ul{list-style:none;font-size:.85rem;color:#4A3A42}
+.lesson li{padding:5px 0;border-top:1px dashed var(--line)}
+.formats{margin-top:34px;text-align:center;color:var(--ink-soft);font-size:.92rem;padding:0 24px}
 .formats b{color:var(--rose-deep)}
 
 /* ---------- Pricing ---------- */
 .taster{
-  background:var(--blush);border-radius:14px;text-align:center;
-  padding:18px 24px;margin:0 auto 40px;max-width:640px;
-  color:var(--rose-deep);font-weight:600;letter-spacing:.02em;
+  background:var(--blush);text-align:center;
+  padding:16px 24px;margin:0 auto 44px;max-width:680px;
+  color:var(--rose-deep);font-weight:600;letter-spacing:.06em;font-size:.9rem;text-transform:uppercase;
 }
-.price-block{background:var(--porcelain);border:1px solid var(--line);border-radius:18px;padding:34px 34px 26px;margin-bottom:26px}
-.price-block h3{font-size:1.7rem;font-weight:600}
-.price-block h3 .zh-name{color:var(--rose);font-family:var(--serif-zh)}
-.price-block .sub{color:var(--ink-soft);font-size:.92rem;margin:4px 0 18px}
-table.prices{width:100%;border-collapse:collapse;font-size:.98rem}
+.price-block{background:var(--porcelain);border:1px solid var(--line);padding:36px 40px 30px;margin-bottom:30px}
+@media(max-width:560px){.price-block{padding:26px 18px 20px}}
+.price-title{display:flex;align-items:baseline;gap:16px;border-bottom:2px solid var(--rose);padding-bottom:10px;margin-bottom:6px;flex-wrap:wrap}
+.price-title h3{font-size:1.6rem;font-weight:500}
+.price-title h3 .zh-name{color:var(--rose);font-family:var(--serif-zh)}
+.price-title .sub{color:var(--ink-soft);font-size:.82rem;letter-spacing:.04em}
+table.prices{width:100%;border-collapse:collapse}
 table.prices th{
-  font-weight:600;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;
-  color:var(--gold);text-align:right;padding:8px 4px;border-bottom:1px solid var(--gold-soft);
+  font-weight:600;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--gold);text-align:right;padding:12px 4px 8px;font-family:var(--sans);
+  border-bottom:1px solid var(--line);white-space:nowrap;
 }
 table.prices th:first-child{text-align:left}
-table.prices td{padding:14px 4px;border-bottom:1px solid var(--line);text-align:right}
-table.prices td:first-child{text-align:left}
+table.prices td{padding:15px 4px;border-bottom:1px dashed var(--line);text-align:right;vertical-align:baseline}
+table.prices td:first-child{text-align:left;padding-right:16px}
 table.prices tr:last-child td{border-bottom:0}
-td .lvl{font-weight:600}
-td .grades{color:var(--ink-soft);font-size:.88rem}
-td.price{font-weight:600;white-space:nowrap}
-.under12{
-  background:var(--blush);border-radius:12px;text-align:center;padding:13px;
-  color:var(--rose-deep);font-weight:600;margin-top:8px;
-}
-.price-notes{color:var(--ink-soft);font-size:.9rem;line-height:2;text-align:center;margin-top:6px}
-.price-notes .dot{color:var(--gold);margin:0 8px}
-@media(max-width:560px){
-  .price-block{padding:24px 18px 18px}
-  table.prices{font-size:.9rem}
-}
+td .lvl{font-family:var(--serif);font-size:1.05rem;font-weight:500}
+body.zh td .lvl{font-family:var(--serif-zh)}
+td .grades{color:var(--ink-soft);font-size:.82rem;display:block;margin-top:2px}
+td.price{font-family:var(--serif);font-size:1.1rem;font-weight:500;white-space:nowrap;width:110px}
+@media(max-width:560px){td.price{width:72px;font-size:1rem}}
+.under12{background:var(--blush);text-align:center;padding:13px;color:var(--rose-deep);font-weight:600;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-top:18px}
+.price-notes{color:var(--ink-soft);font-size:.88rem;line-height:2.1;text-align:center;margin-top:4px}
+.price-notes .dot{color:var(--gold);margin:0 9px}
 
 /* ---------- Policies ---------- */
-.policy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
-.policy{background:var(--porcelain);border:1px solid var(--line);border-radius:16px;padding:26px}
-.policy h3{color:var(--rose-deep);font-size:1.25rem;font-weight:600;margin-bottom:12px}
-.policy ul{list-style:none;font-size:.93rem;color:#4A3A42}
+#policies{background:var(--porcelain);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.policy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:0;border:1px solid var(--line)}
+.policy{padding:28px 26px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper)}
+.policy h3{color:var(--rose-deep);font-size:1.15rem;font-weight:500;margin-bottom:12px;display:flex;gap:10px;align-items:baseline}
+.policy h3 .num{font-family:var(--sans);font-size:.72rem;letter-spacing:.14em;color:var(--gold)}
+.policy ul{list-style:none;font-size:.88rem;color:#4A3A42}
 .policy li{padding:6px 0 6px 18px;position:relative}
 .policy li::before{content:"·";color:var(--gold);position:absolute;left:2px;font-weight:700}
 
-/* ---------- Testimonials ---------- */
-.quote-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
-.quote{
-  background:var(--porcelain);border:1px solid var(--line);border-radius:16px;padding:30px 26px;
-  font-family:var(--serif);font-size:1.08rem;font-style:italic;color:#4A3A42;position:relative;
+/* ---------- Gallery ---------- */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;grid-auto-rows:150px;grid-auto-flow:dense}
+@media(max-width:900px){.gallery{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:130px}}
+.gallery figure{position:relative;overflow:hidden;margin:0}
+.gallery figure.tall{grid-row:span 2}
+.gallery figure.wide{grid-column:span 2}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease}
+.gallery figure:hover img{transform:scale(1.03)}
+.gallery figcaption{
+  position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(transparent,rgba(51,35,43,.72));
+  color:#F6EEE9;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;
+  padding:26px 12px 10px;
 }
-body.zh .quote{font-style:normal}
-.quote::before{content:"“";font-size:3rem;color:var(--gold-soft);line-height:0;display:block;margin:14px 0 4px}
-.quote footer{margin-top:14px;font-family:var(--sans);font-style:normal;font-size:.85rem;color:var(--ink-soft);letter-spacing:.05em}
-
-/* ---------- Media ---------- */
-.media-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.media-tile{
-  aspect-ratio:16/10;border-radius:16px;border:1px solid var(--line);
-  background:linear-gradient(150deg,#EFE2DC,var(--blush));
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  color:var(--rose-deep);text-decoration:none;text-align:center;padding:18px;
-  transition:transform .15s ease;
-}
-.media-tile:hover{transform:translateY(-2px)}
-.media-tile .icon{font-size:1.8rem}
-.media-tile .label{font-weight:600}
-.media-tile .sub{font-size:.85rem;color:var(--ink-soft)}
 
 /* ---------- FAQ ---------- */
-.faq{max-width:720px;margin:0 auto}
-.faq details{background:var(--porcelain);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;padding:0 22px}
-.faq summary{
-  cursor:pointer;list-style:none;padding:18px 0;font-weight:600;color:var(--ink);
-  display:flex;justify-content:space-between;align-items:center;gap:16px;
-}
+.faq{max-width:760px;margin:0 auto;padding:0 24px}
+.faq details{background:var(--porcelain);border:1px solid var(--line);margin-bottom:-1px;padding:0 24px}
+.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-family:var(--serif);font-size:1.05rem;font-weight:500;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:16px}
+body.zh .faq summary{font-family:var(--serif-zh)}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";color:var(--gold);font-size:1.3rem;font-family:var(--serif)}
+.faq summary::after{content:"+";color:var(--rose);font-size:1.3rem;font-family:var(--serif)}
 .faq details[open] summary::after{content:"–"}
-.faq details p{padding:0 0 18px;color:var(--ink-soft);font-size:.95rem}
+.faq details p{padding:0 0 20px;color:var(--ink-soft);font-size:.92rem}
 
 /* ---------- Contact ---------- */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+#contact{background:var(--porcelain);border-top:1px solid var(--line)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line)}
 @media(max-width:820px){.contact-grid{grid-template-columns:1fr}}
-.contact-card{background:var(--porcelain);border:1px solid var(--line);border-radius:18px;padding:34px}
-.contact-card h3{font-size:1.4rem;font-weight:600;margin-bottom:18px}
-.contact-list{list-style:none;display:grid;gap:14px;font-size:.97rem}
+.contact-card{padding:38px 36px;background:var(--paper)}
+.contact-card + .contact-card{border-left:1px solid var(--line)}
+@media(max-width:820px){.contact-card + .contact-card{border-left:0;border-top:1px solid var(--line)}}
+.contact-card h3{font-size:1.35rem;font-weight:500;margin-bottom:20px;border-bottom:2px solid var(--rose);padding-bottom:10px}
+.contact-list{list-style:none;display:grid;gap:16px;font-size:.95rem}
 .contact-list a{text-decoration:none}
 .contact-list a:hover{text-decoration:underline}
-.contact-list .lbl{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
-.booking-note{
-  margin-top:22px;border:1px dashed var(--gold-soft);border-radius:12px;
-  padding:16px;font-size:.88rem;color:var(--ink-soft);background:var(--paper);
-}
-form .field{margin-bottom:16px}
-form label{display:block;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
-form input,form select,form textarea{
-  width:100%;border:1px solid var(--line);border-radius:10px;background:var(--paper);
-  padding:12px 14px;font-family:var(--sans);font-size:.97rem;color:var(--ink);
-}
-form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--gold);border-color:var(--gold)}
-form textarea{min-height:110px;resize:vertical}
-form button{width:100%;border:0;cursor:pointer;font-family:var(--sans)}
+.contact-list .lbl{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2px}
+.contact-card .enquiry-copy{color:#4A3A42;font-size:.93rem;margin-bottom:22px}
+.contact-card .btn-primary{margin-bottom:14px}
+.contact-card .small{font-size:.82rem;color:var(--ink-soft)}
 
 /* ---------- Footer ---------- */
-footer.site{
-  border-top:1px solid var(--line);padding:38px 24px;text-align:center;
-  color:var(--ink-soft);font-size:.88rem;
-}
-footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);margin-bottom:8px}
+footer.site{border-top:2px solid var(--rose);padding:38px 24px;text-align:center;color:var(--ink-soft);font-size:.85rem}
+footer.site .name{font-family:var(--serif);font-size:1.15rem;letter-spacing:.08em;color:var(--ink);margin-bottom:6px}
 </style>
 </head>
 <body>
 
-<!-- ======================= NAV ======================= -->
-<header class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="#top">Giana <em>Yeung</em></a>
+<!-- ======================= MASTHEAD ======================= -->
+<header class="mast">
+  <div class="mast-inner">
+    <a class="brand" href="#top">GIANA YEUNG</a>
+    <span class="brand-sub"><span class="en-only">Singing &amp; Guzheng Studio</span><span class="zh-only">唱歌及古箏教室</span></span>
     <nav class="links" aria-label="Main">
       <a href="#about"><span class="en-only">About</span><span class="zh-only">關於我</span></a>
       <a href="#lessons"><span class="en-only">Lessons</span><span class="zh-only">課程</span></a>
       <a href="#pricing"><span class="en-only">Pricing</span><span class="zh-only">收費</span></a>
-      <a href="#policies"><span class="en-only">Policies</span><span class="zh-only">上課須知</span></a>
-      <a href="#media"><span class="en-only">Media</span><span class="zh-only">影音</span></a>
+      <a href="#policies"><span class="en-only">Policies</span><span class="zh-only">須知</span></a>
+      <a href="#gallery"><span class="en-only">Gallery</span><span class="zh-only">影像</span></a>
       <a href="#contact"><span class="en-only">Contact</span><span class="zh-only">聯絡</span></a>
     </nav>
     <div class="lang-toggle" role="group" aria-label="Language">
@@ -276,86 +240,68 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
 
 <!-- ======================= HERO ======================= -->
 <div class="hero" id="top">
-  <div class="strings" aria-hidden="true">
-    <svg viewBox="0 0 1200 520" preserveAspectRatio="none">
-      <g stroke="#B3854D" stroke-width="0.7">
-        <line x1="0" y1="40"  x2="1200" y2="70"/>
-        <line x1="0" y1="75"  x2="1200" y2="100"/>
-        <line x1="0" y1="110" x2="1200" y2="130"/>
-        <line x1="0" y1="405" x2="1200" y2="390"/>
-        <line x1="0" y1="440" x2="1200" y2="420"/>
-        <line x1="0" y1="475" x2="1200" y2="455"/>
-      </g>
-      <g fill="#A6516A" opacity="0.55">
-        <path d="M180 63 l7 -10 7 10 z"/>
-        <path d="M340 92 l7 -10 7 10 z"/>
-        <path d="M520 118 l7 -10 7 10 z"/>
-        <path d="M700 398 l7 -10 7 10 z"/>
-        <path d="M880 430 l7 -10 7 10 z"/>
-        <path d="M1030 463 l7 -10 7 10 z"/>
-      </g>
-    </svg>
-  </div>
-  <div class="hero-inner">
-    <span class="eyebrow">
-      <span class="en-only">Southampton · In-person &amp; Online Worldwide</span>
-      <span class="zh-only">修咸頓 · 面授及全球網上授課</span>
-    </span>
-    <h1>Giana Yeung</h1>
-    <p class="role">
-      <span class="en-only">Vocalist &amp; Guzheng Artist · Music Teacher</span>
-      <span class="zh-only">歌唱家及古箏演奏者 · 音樂導師</span>
-    </p>
-    <p class="tagline">
-      <span class="en-only">Patient, encouraging lessons in classical vocal, musical theatre, pop singing and guzheng — for exams, hobby or confidence, every student is welcome.</span>
-      <span class="zh-only">耐心、鼓勵式教學，提供古典聲樂、音樂劇、流行唱歌及古箏課程。無論為考級、興趣或建立自信，歡迎每一位學生。</span>
-    </p>
-    <div class="cta-row">
+  <div class="hero-grid">
+    <div class="hero-main">
+      <div class="staff" aria-hidden="true"><div></div><div></div><div></div><div></div><div></div></div>
+      <span class="kicker">
+        <span class="en-only">Southampton · Online Worldwide</span>
+        <span class="zh-only">修咸頓 · 全球網上授課</span>
+      </span>
+      <h1>
+        <span class="en-only">The voice, <em>the strings,</em> and the student.</span>
+        <span class="zh-only">一把聲音、<em>一副琴弦</em>，與每一位學生。</span>
+      </h1>
+      <p class="lede">
+        <span class="en-only">Classical vocal · musical theatre · pop · guzheng 古箏. Patient, encouraging lessons for every age and stage.</span>
+        <span class="zh-only">古典聲樂 · 音樂劇 · 流行曲 · 古箏。耐心、鼓勵式教學，適合任何年齡與程度。</span>
+      </p>
       <a class="btn btn-primary" href="#contact">
-        <span class="en-only">Book a 30-min taster — £20</span>
-        <span class="zh-only">預約 30 分鐘體驗課 — £20</span>
+        <span class="en-only">Book a taster — £20</span>
+        <span class="zh-only">預約體驗課 — £20</span>
       </a>
       <a class="btn btn-ghost" href="#pricing">
-        <span class="en-only">View lesson pricing</span>
-        <span class="zh-only">查看課程收費</span>
+        <span class="en-only">View pricing</span>
+        <span class="zh-only">查看收費</span>
       </a>
     </div>
-    <p class="creds">
-      <span>BA (Hons) Music in Vocal Performance, University of Southampton</span><span class="dot">·</span>
-      <span class="en-only"><span>Diploma in Guzheng, Central Conservatory of Music</span></span>
-      <span class="zh-only"><span>中央音樂學院古箏文憑</span></span>
-      <span class="dot">·</span>
-      <span class="en-only"><span>ABRSM Grade 8 Music Theory</span></span>
-      <span class="zh-only"><span>英國皇家音樂學院八級樂理</span></span>
-    </p>
+    <aside class="hero-side">
+      <h2><span class="en-only">Credentials</span><span class="zh-only">專業資歷</span></h2>
+      <p><span class="en-only">BA (Hons) Music in Vocal Performance, University of Southampton</span>
+      <span class="zh-only">修咸頓大學音樂（聲樂演唱）榮譽學士</span></p>
+      <p><span class="en-only">Diploma in Guzheng, Central Conservatory of Music</span>
+      <span class="zh-only">中央音樂學院古箏文憑</span></p>
+      <p><span class="en-only">ABRSM Grade 8 Music Theory</span>
+      <span class="zh-only">英國皇家音樂學院（ABRSM）八級樂理</span></p>
+      <p class="langs"><span class="en-only">Teaches in English, Cantonese &amp; Mandarin</span>
+      <span class="zh-only">可以英語、粵語及國語授課</span></p>
+    </aside>
   </div>
 </div>
 
 <!-- ======================= ABOUT ======================= -->
 <section id="about">
+  <div class="section-head">
+    <h2><span class="en-only">About Giana</span><span class="zh-only">關於 Giana</span></h2>
+    <span class="kicker"><span class="en-only">The Artist</span><span class="zh-only">藝術家</span></span>
+  </div>
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">The Artist</span><span class="zh-only">藝術家</span></p>
-      <h2><span class="en-only">About Giana</span><span class="zh-only">關於 Giana</span></h2>
-      <div class="rule"></div>
-    </div>
     <div class="about-grid">
-      <div class="portrait">
-        <span class="en-only">Portrait photo<br>coming soon</span>
-        <span class="zh-only">個人照片<br>即將上載</span>
-      </div>
+      <figure class="about-photo">
+        <img src="images/portrait-black.jpg" alt="Giana Yeung standing on stage in a black dress before a performance">
+        <figcaption><span class="en-only">On stage, London 2025</span><span class="zh-only">倫敦演出 · 2025</span></figcaption>
+      </figure>
       <div class="about-copy">
         <p class="en-only">Giana Yeung is a Southampton-based vocalist and guzheng artist working across classical, musical theatre and pop traditions. Trained in vocal performance at the University of Southampton and in guzheng at the Central Conservatory of Music, she brings two musical worlds — Western vocal artistry and the 2,500-year-old Chinese zither — into one teaching studio.</p>
         <p class="zh-only">Giana Yeung 是駐修咸頓的歌唱家及古箏演奏者，涉獵古典、音樂劇及流行等多種風格。她於修咸頓大學修讀聲樂演唱，並持有中央音樂學院古箏文憑，將西方聲樂藝術與擁有二千五百年歷史的中國箏樂融匯於同一個教學空間。</p>
-        <p class="ph en-only">[Placeholder — tell me about your performance highlights, ensembles, venues or competitions and I'll write this paragraph for you.]</p>
-        <p class="ph zh-only">〔預留位置 — 請告訴我你的演出亮點、合作團體、演出場地或比賽經歷，我會為你撰寫這一段。〕</p>
+        <p class="en-only">Her performing life began early: during her school years she took top-three placings in the girls' solo singing classes of the Hong Kong Schools Music Festival on multiple occasions. She has since performed at more than fifty venues and events across London, the South of England and Hong Kong, and in 2023 she won the Southampton Music and Drama Festival in both the Adult Songs from the Shows and Adult Vocal Recital classes.</p>
+        <p class="zh-only">她的演出生涯始於求學時期，曾多次於香港校際音樂節女聲獨唱項目取得三甲成績。此後，她於倫敦、英國南部及香港超過五十個場地與活動中演出，並於 2023 年修咸頓音樂及戲劇節（Southampton Music and Drama Festival）成人組別 Songs from the Shows 及 Vocal Recital 兩個項目中雙雙奪冠。</p>
         <p class="en-only">As a teacher, Giana believes every voice — and every pair of hands — deserves patient, personal guidance. Lessons are structured but warm: technique is built step by step, repertoire is chosen with the student, and progress is celebrated whether the goal is a distinction at Grade 8 or simply the joy of making music.</p>
         <p class="zh-only">作為導師，Giana 相信每一把聲音、每一雙手都值得耐心而個人化的引導。課堂結構清晰而氣氛溫暖：技巧逐步建立，曲目與學生共同挑選；無論目標是八級優異成績，還是純粹享受音樂的快樂，每一點進步都值得肯定。</p>
         <div class="about-facts">
-          <div class="fact"><span class="en-only">BA (Hons) Music in Vocal Performance — University of Southampton</span><span class="zh-only">修咸頓大學音樂（聲樂演唱）榮譽學士</span></div>
-          <div class="fact"><span class="en-only">Diploma in Guzheng — Central Conservatory of Music</span><span class="zh-only">中央音樂學院古箏文憑</span></div>
-          <div class="fact"><span class="en-only">ABRSM Grade 8 Music Theory</span><span class="zh-only">英國皇家音樂學院（ABRSM）八級樂理</span></div>
-          <div class="fact"><span class="en-only">Teaches in English &amp; Cantonese</span><span class="zh-only">可以英語及粵語授課</span></div>
+          <div class="fact"><span class="num">01</span><span class="en-only">Top-three placings, girls' solo singing — Hong Kong Schools Music Festival</span><span class="zh-only">香港校際音樂節女聲獨唱項目 — 多次三甲成績</span></div>
+          <div class="fact"><span class="num">02</span><span class="en-only">50+ performances across London, the South of England &amp; Hong Kong</span><span class="zh-only">於倫敦、英國南部及香港演出逾五十場</span></div>
+          <div class="fact"><span class="num">03</span><span class="en-only">Winner, Southampton Music &amp; Drama Festival 2023 — Adult Songs from the Shows &amp; Adult Vocal Recital</span><span class="zh-only">2023 年修咸頓音樂及戲劇節冠軍 — 成人組 Songs from the Shows 及 Vocal Recital</span></div>
+          <div class="fact"><span class="num">04</span><span class="en-only">Teaches in English, Cantonese &amp; Mandarin</span><span class="zh-only">可以英語、粵語及國語授課</span></div>
         </div>
       </div>
     </div>
@@ -363,19 +309,20 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
 </section>
 
 <!-- ======================= LESSONS ======================= -->
-<section id="lessons" style="background:var(--porcelain);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="lessons">
+  <div class="section-head">
+    <h2><span class="en-only">What I Teach</span><span class="zh-only">教授科目</span></h2>
+    <span class="kicker"><span class="en-only">The Teacher</span><span class="zh-only">課程</span></span>
+  </div>
+  <p class="section-note">
+    <span class="en-only">Every singing lesson includes warm-up, technique, repertoire, and theory &amp; aural — tailored to your goals.</span>
+    <span class="zh-only">每堂唱歌課均包括熱身、技巧、曲目及樂理與聽力訓練，並按你的目標度身安排。</span>
+  </p>
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">The Teacher</span><span class="zh-only">課程</span></p>
-      <h2><span class="en-only">What I Teach</span><span class="zh-only">教授科目</span></h2>
-      <p><span class="en-only">Every singing lesson includes warm-up, technique, repertoire, and theory &amp; aural — tailored to your goals.</span>
-      <span class="zh-only">每堂唱歌課均包括熱身、技巧、曲目及樂理與聽力訓練，並按你的目標度身安排。</span></p>
-      <div class="rule"></div>
-    </div>
     <div class="lesson-grid">
-      <div class="lesson-card">
+      <div class="lesson">
+        <span class="num">I.</span>
         <h3><span class="en-only">Classical Vocal</span><span class="zh-only">古典聲樂</span></h3>
-        <p class="zh-sub en-only">古典聲樂</p>
         <p><span class="en-only">Healthy classical technique, breath support, and art song &amp; aria repertoire.</span>
         <span class="zh-only">建立健康的古典發聲技巧與氣息支持，研習藝術歌曲及詠嘆調。</span></p>
         <ul>
@@ -383,9 +330,9 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
           <li><span class="en-only">ABRSM / Trinity exam preparation</span><span class="zh-only">ABRSM / Trinity 考級準備</span></li>
         </ul>
       </div>
-      <div class="lesson-card">
+      <div class="lesson">
+        <span class="num">II.</span>
         <h3><span class="en-only">Musical Theatre</span><span class="zh-only">音樂劇唱腔</span></h3>
-        <p class="zh-sub en-only">音樂劇</p>
         <p><span class="en-only">Belt and legit styles, acting through song, and audition-ready performance.</span>
         <span class="zh-only">教授 Belt 與傳統唱法，以歌傳情，並為試鏡演出作好準備。</span></p>
         <ul>
@@ -393,9 +340,9 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
           <li><span class="en-only">Audition coaching</span><span class="zh-only">試鏡指導</span></li>
         </ul>
       </div>
-      <div class="lesson-card">
+      <div class="lesson">
+        <span class="num">III.</span>
         <h3><span class="en-only">Pop Singing</span><span class="zh-only">流行唱歌</span></h3>
-        <p class="zh-sub en-only">流行唱歌</p>
         <p><span class="en-only">Contemporary vocal style, mic technique, riffs and building your own sound.</span>
         <span class="zh-only">掌握現代流行唱腔、咪高風技巧與轉音，發展屬於自己的聲音。</span></p>
         <ul>
@@ -403,9 +350,9 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
           <li><span class="en-only">Confidence &amp; performance skills</span><span class="zh-only">自信心與舞台表現</span></li>
         </ul>
       </div>
-      <div class="lesson-card">
+      <div class="lesson">
+        <span class="num">IV.</span>
         <h3><span class="en-only">Guzheng</span><span class="zh-only">古箏</span></h3>
-        <p class="zh-sub en-only">古箏</p>
         <p><span class="en-only">The Chinese zither — from your very first notes to intermediate repertoire.</span>
         <span class="zh-only">由第一個音開始，循序漸進學習古箏，直至中級曲目。</span></p>
         <ul>
@@ -423,46 +370,83 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
 
 <!-- ======================= PRICING ======================= -->
 <section id="pricing">
+  <div class="section-head">
+    <h2><span class="en-only">Lesson Pricing</span><span class="zh-only">課程收費</span></h2>
+    <span class="kicker"><span class="en-only">Fees</span><span class="zh-only">收費</span></span>
+  </div>
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">Fees</span><span class="zh-only">收費</span></p>
-      <h2><span class="en-only">Lesson Pricing</span><span class="zh-only">課程收費</span></h2>
-      <div class="rule"></div>
-    </div>
-
     <div class="taster">
       <span class="en-only">New here? 30-minute taster &amp; assessment — £20</span>
       <span class="zh-only">新學生：30 分鐘體驗及評估課 — £20</span>
     </div>
 
     <div class="price-block">
-      <h3><span class="en-only">Singing</span><span class="zh-only">唱歌</span></h3>
-      <p class="sub">
-        <span class="en-only">Classical vocal · Musical theatre · Pop — each lesson: warm-up, technique, repertoire, theory &amp; aural</span>
-        <span class="zh-only">古典聲樂 · 音樂劇 · 流行曲 — 每堂包括熱身、技巧、曲目、樂理及聽力</span>
-      </p>
+      <div class="price-title">
+        <h3><span class="en-only">Singing</span><span class="zh-only">唱歌</span></h3>
+        <span class="sub">
+          <span class="en-only">Classical vocal · Musical theatre · Pop</span>
+          <span class="zh-only">古典聲樂 · 音樂劇 · 流行曲</span>
+        </span>
+      </div>
       <table class="prices">
-        <thead><tr><th><span class="en-only">Level</span><span class="zh-only">程度</span></th><th>45 <span class="en-only">min</span><span class="zh-only">分鐘</span></th><th>60 <span class="en-only">min</span><span class="zh-only">分鐘</span></th></tr></thead>
+        <thead>
+          <tr>
+            <th scope="col"><span class="en-only">Level</span><span class="zh-only">程度</span></th>
+            <th scope="col">45 <span class="en-only">min</span><span class="zh-only">分鐘</span></th>
+            <th scope="col">60 <span class="en-only">min</span><span class="zh-only">分鐘</span></th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td><span class="lvl"><span class="en-only">Beginner</span><span class="zh-only">初級</span></span> <span class="grades"><span class="en-only">no experience needed / Grades 1–3</span><span class="zh-only">無需經驗／一至三級</span></span></td><td class="price">£38</td><td class="price">£45</td></tr>
-          <tr><td><span class="lvl"><span class="en-only">Intermediate</span><span class="zh-only">中級</span></span> <span class="grades"><span class="en-only">Grades 4–5</span><span class="zh-only">四至五級</span></span></td><td class="price">£42</td><td class="price">£50</td></tr>
-          <tr><td><span class="lvl"><span class="en-only">Advanced</span><span class="zh-only">高級</span></span> <span class="grades"><span class="en-only">Grades 6–7</span><span class="zh-only">六至七級</span></span></td><td class="price">£49</td><td class="price">£58</td></tr>
-          <tr><td><span class="lvl"><span class="en-only">Grade 8</span><span class="zh-only">八級</span></span></td><td class="price">£55</td><td class="price">£65</td></tr>
+          <tr>
+            <td><span class="lvl"><span class="en-only">Beginner</span><span class="zh-only">初級</span></span>
+                <span class="grades"><span class="en-only">No experience needed / Grades 1–3</span><span class="zh-only">無需經驗／一至三級</span></span></td>
+            <td class="price">£38</td><td class="price">£45</td>
+          </tr>
+          <tr>
+            <td><span class="lvl"><span class="en-only">Intermediate</span><span class="zh-only">中級</span></span>
+                <span class="grades"><span class="en-only">Grades 4–5</span><span class="zh-only">四至五級</span></span></td>
+            <td class="price">£42</td><td class="price">£50</td>
+          </tr>
+          <tr>
+            <td><span class="lvl"><span class="en-only">Advanced</span><span class="zh-only">高級</span></span>
+                <span class="grades"><span class="en-only">Grades 6–7</span><span class="zh-only">六至七級</span></span></td>
+            <td class="price">£49</td><td class="price">£58</td>
+          </tr>
+          <tr>
+            <td><span class="lvl"><span class="en-only">Grade 8</span><span class="zh-only">八級</span></span></td>
+            <td class="price">£55</td><td class="price">£65</td>
+          </tr>
         </tbody>
       </table>
     </div>
 
     <div class="price-block">
-      <h3><span class="en-only">Guzheng </span><span class="zh-name">古箏</span></h3>
-      <p class="sub">
-        <span class="en-only">Beginner to intermediate · in-person only</span>
-        <span class="zh-only">入門至中級 · 只限面授</span>
-      </p>
+      <div class="price-title">
+        <h3><span class="en-only">Guzheng </span><span class="zh-name">古箏</span></h3>
+        <span class="sub">
+          <span class="en-only">Beginner to intermediate · in-person only</span>
+          <span class="zh-only">入門至中級 · 只限面授</span>
+        </span>
+      </div>
       <table class="prices">
-        <thead><tr><th><span class="en-only">Level</span><span class="zh-only">程度</span></th><th>45 <span class="en-only">min</span><span class="zh-only">分鐘</span></th><th>60 <span class="en-only">min</span><span class="zh-only">分鐘</span></th></tr></thead>
+        <thead>
+          <tr>
+            <th scope="col"><span class="en-only">Level</span><span class="zh-only">程度</span></th>
+            <th scope="col">45 <span class="en-only">min</span><span class="zh-only">分鐘</span></th>
+            <th scope="col">60 <span class="en-only">min</span><span class="zh-only">分鐘</span></th>
+          </tr>
+        </thead>
         <tbody>
-          <tr><td><span class="lvl"><span class="en-only">Entry</span><span class="zh-only">入門</span></span> <span class="grades"><span class="en-only">Grades 1–3</span><span class="zh-only">一至三級</span></span></td><td class="price">£36</td><td class="price">£42</td></tr>
-          <tr><td><span class="lvl"><span class="en-only">Intermediate</span><span class="zh-only">中級</span></span> <span class="grades"><span class="en-only">Grades 4–6</span><span class="zh-only">四至六級</span></span></td><td class="price">£40</td><td class="price">£48</td></tr>
+          <tr>
+            <td><span class="lvl"><span class="en-only">Entry</span><span class="zh-only">入門</span></span>
+                <span class="grades"><span class="en-only">Grades 1–3</span><span class="zh-only">一至三級</span></span></td>
+            <td class="price">£36</td><td class="price">£42</td>
+          </tr>
+          <tr>
+            <td><span class="lvl"><span class="en-only">Intermediate</span><span class="zh-only">中級</span></span>
+                <span class="grades"><span class="en-only">Grades 4–6</span><span class="zh-only">四至六級</span></span></td>
+            <td class="price">£40</td><td class="price">£48</td>
+          </tr>
         </tbody>
       </table>
       <div class="under12">
@@ -481,16 +465,15 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
 </section>
 
 <!-- ======================= POLICIES ======================= -->
-<section id="policies" style="background:var(--porcelain);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+<section id="policies">
+  <div class="section-head">
+    <h2><span class="en-only">Lesson Policies</span><span class="zh-only">上課須知</span></h2>
+    <span class="kicker"><span class="en-only">Good to know</span><span class="zh-only">須知</span></span>
+  </div>
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">Good to know</span><span class="zh-only">須知</span></p>
-      <h2><span class="en-only">Lesson Policies</span><span class="zh-only">上課須知</span></h2>
-      <div class="rule"></div>
-    </div>
     <div class="policy-grid">
       <div class="policy">
-        <h3><span class="en-only">Booking &amp; payment</span><span class="zh-only">預約與付款</span></h3>
+        <h3><span class="num">I.</span><span class="en-only">Booking &amp; payment</span><span class="zh-only">預約與付款</span></h3>
         <ul>
           <li><span class="en-only">Fees are due in advance: before each single lesson, or the first of a block.</span><span class="zh-only">學費須預先繳付：單堂於課前繳付，套票於首堂前繳付。</span></li>
           <li><span class="en-only">Payment by bank transfer or cash. Block discounts (5 = 5%, 10 = 10%) are cash only.</span><span class="zh-only">可以銀行轉帳或現金付款；套票折扣（5 堂 95 折、10 堂 9 折）只限現金。</span></li>
@@ -498,7 +481,7 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
         </ul>
       </div>
       <div class="policy">
-        <h3><span class="en-only">Cancellations &amp; missed lessons</span><span class="zh-only">取消與缺課</span></h3>
+        <h3><span class="num">II.</span><span class="en-only">Cancellations &amp; missed lessons</span><span class="zh-only">取消與缺課</span></h3>
         <ul>
           <li><span class="en-only">Free reschedule or cancellation with 48+ hours' notice.</span><span class="zh-only">於 48 小時或以上前通知，可免費改期或取消。</span></li>
           <li><span class="en-only">Under 48 hours' notice, or no-shows, are charged in full.</span><span class="zh-only">少於 48 小時通知或缺席，將收取全費。</span></li>
@@ -507,14 +490,14 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
         </ul>
       </div>
       <div class="policy">
-        <h3><span class="en-only">Online lessons</span><span class="zh-only">網上課程</span></h3>
+        <h3><span class="num">III.</span><span class="en-only">Online lessons</span><span class="zh-only">網上課程</span></h3>
         <ul>
           <li><span class="en-only">Held over Google Meet. Lessons run as normal; if my connection fails, you get a free make-up.</span><span class="zh-only">以 Google Meet 進行，課堂如常。如因本人網絡問題中斷，將免費補課。</span></li>
           <li><span class="en-only">Available worldwide, charged in GBP.</span><span class="zh-only">全球適用，以英鎊收費。</span></li>
         </ul>
       </div>
       <div class="policy">
-        <h3><span class="en-only">Students under 18</span><span class="zh-only">18 歲以下學生</span></h3>
+        <h3><span class="num">IV.</span><span class="en-only">Students under 18</span><span class="zh-only">18 歲以下學生</span></h3>
         <ul>
           <li><span class="en-only">Booked and paid by a parent or guardian, who stays the main contact.</span><span class="zh-only">須由家長或監護人預約及付款，並作為主要聯絡人。</span></li>
           <li><span class="en-only">A parent may observe any lesson on request.</span><span class="zh-only">家長可要求旁聽任何課堂。</span></li>
@@ -522,7 +505,7 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
         </ul>
       </div>
       <div class="policy">
-        <h3><span class="en-only">Travel, fees &amp; notice</span><span class="zh-only">交通與費用</span></h3>
+        <h3><span class="num">V.</span><span class="en-only">Travel, fees &amp; notice</span><span class="zh-only">交通與費用</span></h3>
         <ul>
           <li><span class="en-only">No travel fee for lessons at my home; +£5 if I travel to you (not discountable).</span><span class="zh-only">於本人寓所上課免交通費；上門教學另加 £5（不設折扣）。</span></li>
           <li><span class="en-only">Fees are reviewed occasionally, with at least 4 weeks' notice of any change.</span><span class="zh-only">學費或會不定期調整，任何變動將提前至少 4 星期通知。</span></li>
@@ -532,159 +515,138 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
   </div>
 </section>
 
-<!-- ======================= TESTIMONIALS ======================= -->
-<section id="testimonials">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">Kind words</span><span class="zh-only">學生心聲</span></p>
-      <h2><span class="en-only">What Students Say</span><span class="zh-only">學生與家長的話</span></h2>
-      <div class="rule"></div>
-    </div>
-    <div class="quote-grid">
-      <blockquote class="quote">
-        <span class="en-only">[Placeholder — a testimonial from a singing student will go here.]</span>
-        <span class="zh-only">〔預留位置 — 唱歌學生的評語將刊於此。〕</span>
-        <footer><span class="en-only">— Student name, discipline</span><span class="zh-only">— 學生姓名，科目</span></footer>
-      </blockquote>
-      <blockquote class="quote">
-        <span class="en-only">[Placeholder — a parent's testimonial will go here.]</span>
-        <span class="zh-only">〔預留位置 — 家長的評語將刊於此。〕</span>
-        <footer><span class="en-only">— Parent of a student</span><span class="zh-only">— 學生家長</span></footer>
-      </blockquote>
-      <blockquote class="quote">
-        <span class="en-only">[Placeholder — a guzheng student's testimonial will go here.]</span>
-        <span class="zh-only">〔預留位置 — 古箏學生的評語將刊於此。〕</span>
-        <footer><span class="en-only">— Student name, guzheng</span><span class="zh-only">— 學生姓名，古箏</span></footer>
-      </blockquote>
-    </div>
+<!-- ======================= GALLERY ======================= -->
+<section id="gallery">
+  <div class="section-head">
+    <h2><span class="en-only">On Stage</span><span class="zh-only">舞台上</span></h2>
+    <span class="kicker"><span class="en-only">Gallery</span><span class="zh-only">影像集</span></span>
   </div>
-</section>
-
-<!-- ======================= MEDIA ======================= -->
-<section id="media" style="background:var(--porcelain);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">Watch &amp; listen</span><span class="zh-only">影音欣賞</span></p>
-      <h2><span class="en-only">Performances &amp; Media</span><span class="zh-only">演出與媒體</span></h2>
-      <p><span class="en-only">Never seen a guzheng before? Come and hear one.</span>
-      <span class="zh-only">未見過古箏？來聽聽它的聲音。</span></p>
-      <div class="rule"></div>
-    </div>
-    <div class="media-grid">
-      <a class="media-tile" href="https://www.youtube.com/@giana3202" target="_blank" rel="noopener">
-        <span class="icon">▶</span>
-        <span class="label">YouTube — @giana3202</span>
-        <span class="sub"><span class="en-only">Performance videos</span><span class="zh-only">演出影片</span></span>
-      </a>
-      <a class="media-tile" href="https://www.instagram.com/giana.cgyg" target="_blank" rel="noopener">
-        <span class="icon">◎</span>
-        <span class="label">Instagram — @giana.cgyg</span>
-        <span class="sub"><span class="en-only">Behind the scenes &amp; studio life</span><span class="zh-only">幕後花絮與教學日常</span></span>
-      </a>
-      <div class="media-tile" role="img" aria-label="Photo placeholder">
-        <span class="icon">✧</span>
-        <span class="label"><span class="en-only">Gallery coming soon</span><span class="zh-only">相簿即將上載</span></span>
-        <span class="sub"><span class="en-only">Performance &amp; studio photos</span><span class="zh-only">演出及課室照片</span></span>
-      </div>
+    <div class="gallery">
+      <figure class="tall">
+        <img src="images/stage-navy-01.jpg" alt="Giana singing solo under a spotlight in a navy dress" loading="lazy">
+        <figcaption><span class="en-only">Solo recital, London</span><span class="zh-only">獨唱演出 · 倫敦</span></figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="images/guzheng-01.jpg" alt="Giana performing on the guzheng" loading="lazy">
+        <figcaption><span class="en-only">Guzheng performance 古箏</span><span class="zh-only">古箏演出</span></figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="images/band-green-03.jpg" alt="Giana singing with a live band in a green dress" loading="lazy">
+        <figcaption><span class="en-only">Live with band</span><span class="zh-only">樂隊現場</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/guzheng-02.jpg" alt="Giana playing the guzheng in concert" loading="lazy">
+        <figcaption><span class="en-only">Guzheng 古箏</span><span class="zh-only">古箏</span></figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="images/stage-navy-02.jpg" alt="Giana singing on a theatre stage" loading="lazy">
+        <figcaption><span class="en-only">On stage, London</span><span class="zh-only">舞台演出 · 倫敦</span></figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="images/band-green-01.jpg" alt="Giana fronting a full live band" loading="lazy">
+        <figcaption><span class="en-only">Full band session</span><span class="zh-only">樂隊演出</span></figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="images/band-green-04.jpg" alt="Giana performing live with a band" loading="lazy">
+        <figcaption><span class="en-only">Live performance</span><span class="zh-only">現場演出</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/stage-motion-01.jpg" alt="Atmospheric stage shot of Giana performing" loading="lazy">
+        <figcaption><span class="en-only">In motion</span><span class="zh-only">光影之間</span></figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="images/guzheng-03.jpg" alt="Giana tuning the guzheng before a performance" loading="lazy">
+        <figcaption><span class="en-only">Before the music</span><span class="zh-only">演出之前</span></figcaption>
+      </figure>
+      <figure class="wide">
+        <img src="images/band-tweed.jpg" alt="Giana singing with guitarists at a London venue" loading="lazy">
+        <figcaption><span class="en-only">Band night, London</span><span class="zh-only">樂隊之夜 · 倫敦</span></figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="images/band-green-02.jpg" alt="Giana singing with her band on a blue-lit stage" loading="lazy">
+        <figcaption><span class="en-only">Live with band</span><span class="zh-only">樂隊現場</span></figcaption>
+      </figure>
+      <figure>
+        <img src="images/stage-motion-02.jpg" alt="Long-exposure stage image of Giana singing" loading="lazy">
+        <figcaption><span class="en-only">In motion</span><span class="zh-only">光影之間</span></figcaption>
+      </figure>
+      <figure class="tall">
+        <img src="images/early-years.jpg" alt="A young Giana singing solo with a school choir in Hong Kong" loading="lazy">
+        <figcaption><span class="en-only">Where it began — Hong Kong</span><span class="zh-only">一切的開始 · 香港</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- ======================= FAQ ======================= -->
-<section id="faq">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">Questions</span><span class="zh-only">常見問題</span></p>
-      <h2><span class="en-only">Frequently Asked</span><span class="zh-only">常見問題</span></h2>
-      <div class="rule"></div>
-    </div>
-    <div class="faq">
-      <details>
-        <summary><span class="en-only">Do I need my own guzheng?</span><span class="zh-only">學古箏需要自備樂器嗎？</span></summary>
-        <p><span class="en-only">Not to begin — you can learn on my instrument during lessons at my home. As you progress, I'll happily advise on buying or renting an instrument suited to your level and budget.</span>
-        <span class="zh-only">初學階段不需要 — 於本人寓所上課時可使用我的古箏。隨著程度提升，我會就購買或租借合適樂器提供建議。</span></p>
-      </details>
-      <details>
-        <summary><span class="en-only">What ages do you teach?</span><span class="zh-only">收生年齡有限制嗎？</span></summary>
-        <p><span class="en-only">All ages are welcome, from young children to adults. Under 12s receive 10% off all lessons, and complete beginners are always welcome — no experience needed.</span>
-        <span class="zh-only">任何年齡均歡迎，由小童到成人。12 歲以下所有課程 9 折，完全零基礎的初學者亦非常歡迎。</span></p>
-      </details>
-      <details>
-        <summary><span class="en-only">Can you prepare me for exams or auditions?</span><span class="zh-only">可以幫我準備考級或試鏡嗎？</span></summary>
-        <p><span class="en-only">Yes — singing lessons cover exam preparation up to Grade 8, including theory and aural, and I coach musical theatre auditions. Guzheng lessons prepare students up to Grade 6.</span>
-        <span class="zh-only">可以 — 唱歌課程涵蓋至八級考試準備，包括樂理及聽力訓練，並提供音樂劇試鏡指導。古箏課程可準備至六級。</span></p>
-      </details>
-      <details>
-        <summary><span class="en-only">Can I take lessons online?</span><span class="zh-only">可以網上上課嗎？</span></summary>
-        <p><span class="en-only">Singing lessons are available online worldwide over Google Meet, charged in GBP. Guzheng is taught in person only, so hands-on technique gets the attention it needs.</span>
-        <span class="zh-only">唱歌課程可透過 Google Meet 網上進行，全球適用，以英鎊收費。古箏課程只限面授，以確保手法技巧得到細緻指導。</span></p>
-      </details>
-      <details>
-        <summary><span class="en-only">What happens in a taster lesson?</span><span class="zh-only">體驗課包括甚麼？</span></summary>
-        <p><span class="en-only">A relaxed 30 minutes (£20) where we chat about your goals, try some singing or playing, and I assess your current level — then I'll recommend a plan that fits you.</span>
-        <span class="zh-only">輕鬆的 30 分鐘（£20）：我們會傾談你的目標，試唱或試彈，我會評估你目前的程度，然後建議最適合你的學習計劃。</span></p>
-      </details>
-    </div>
+<section id="faq" style="padding-top:0">
+  <div class="section-head">
+    <h2><span class="en-only">Frequently Asked</span><span class="zh-only">常見問題</span></h2>
+    <span class="kicker"><span class="en-only">Questions</span><span class="zh-only">問答</span></span>
+  </div>
+  <div class="faq">
+    <details>
+      <summary><span class="en-only">Do I need my own guzheng?</span><span class="zh-only">學古箏需要自備樂器嗎？</span></summary>
+      <p><span class="en-only">Not to begin — you can learn on my instrument during lessons at my home. As you progress, I'll happily advise on buying or renting an instrument suited to your level and budget.</span>
+      <span class="zh-only">初學階段不需要 — 於本人寓所上課時可使用我的古箏。隨著程度提升，我會就購買或租借合適樂器提供建議。</span></p>
+    </details>
+    <details>
+      <summary><span class="en-only">What ages do you teach?</span><span class="zh-only">收生年齡有限制嗎？</span></summary>
+      <p><span class="en-only">All ages are welcome, from young children to adults. Under 12s receive 10% off all lessons, and complete beginners are always welcome — no experience needed.</span>
+      <span class="zh-only">任何年齡均歡迎，由小童到成人。12 歲以下所有課程 9 折，完全零基礎的初學者亦非常歡迎。</span></p>
+    </details>
+    <details>
+      <summary><span class="en-only">Can you prepare me for exams or auditions?</span><span class="zh-only">可以幫我準備考級或試鏡嗎？</span></summary>
+      <p><span class="en-only">Yes — singing lessons cover exam preparation up to Grade 8, including theory and aural, and I coach musical theatre auditions. Guzheng lessons prepare students up to Grade 6.</span>
+      <span class="zh-only">可以 — 唱歌課程涵蓋至八級考試準備，包括樂理及聽力訓練，並提供音樂劇試鏡指導。古箏課程可準備至六級。</span></p>
+    </details>
+    <details>
+      <summary><span class="en-only">Can I take lessons online?</span><span class="zh-only">可以網上上課嗎？</span></summary>
+      <p><span class="en-only">Singing lessons are available online worldwide over Google Meet, charged in GBP. Guzheng is taught in person only, so hands-on technique gets the attention it needs.</span>
+      <span class="zh-only">唱歌課程可透過 Google Meet 網上進行，全球適用，以英鎊收費。古箏課程只限面授，以確保手法技巧得到細緻指導。</span></p>
+    </details>
+    <details>
+      <summary><span class="en-only">What happens in a taster lesson?</span><span class="zh-only">體驗課包括甚麼？</span></summary>
+      <p><span class="en-only">A relaxed 30 minutes (£20) where we chat about your goals, try some singing or playing, and I assess your current level — then I'll recommend a plan that fits you.</span>
+      <span class="zh-only">輕鬆的 30 分鐘（£20）：我們會傾談你的目標，試唱或試彈，我會評估你目前的程度，然後建議最適合你的學習計劃。</span></p>
+    </details>
   </div>
 </section>
 
 <!-- ======================= CONTACT ======================= -->
-<section id="contact" style="background:var(--porcelain);border-top:1px solid var(--line)">
+<section id="contact">
+  <div class="section-head">
+    <h2><span class="en-only">Book a Lesson</span><span class="zh-only">預約課堂</span></h2>
+    <span class="kicker"><span class="en-only">Get in touch</span><span class="zh-only">聯絡</span></span>
+  </div>
   <div class="wrap">
-    <div class="section-head">
-      <p class="kicker"><span class="en-only">Get in touch</span><span class="zh-only">聯絡</span></p>
-      <h2><span class="en-only">Book a Lesson</span><span class="zh-only">預約課堂</span></h2>
-      <p><span class="en-only">Start with a 30-minute taster &amp; assessment (£20), or just say hello.</span>
-      <span class="zh-only">由 30 分鐘體驗及評估課（£20）開始，或先來打個招呼。</span></p>
-      <div class="rule"></div>
-    </div>
     <div class="contact-grid">
       <div class="contact-card">
         <h3><span class="en-only">Direct contact</span><span class="zh-only">直接聯絡</span></h3>
         <ul class="contact-list">
-          <li><span class="lbl">Email</span><a href="mailto:hello@example.com">hello@example.com <span class="en-only">(placeholder)</span><span class="zh-only">（待更新）</span></a></li>
-          <li><span class="lbl">WhatsApp</span><a href="https://wa.me/440000000000">+44 0000 000000 <span class="en-only">(placeholder)</span><span class="zh-only">（待更新）</span></a></li>
+          <li><span class="lbl">Email</span><a href="mailto:gianayeung@gmail.com">gianayeung@gmail.com</a></li>
           <li><span class="lbl">Instagram</span><a href="https://www.instagram.com/giana.cgyg" target="_blank" rel="noopener">@giana.cgyg</a></li>
           <li><span class="lbl">YouTube</span><a href="https://www.youtube.com/@giana3202" target="_blank" rel="noopener">@giana3202</a></li>
           <li><span class="lbl"><span class="en-only">Location</span><span class="zh-only">地點</span></span>
             <span class="en-only">Southampton, UK · in-person &amp; online worldwide</span>
             <span class="zh-only">英國修咸頓 · 面授及全球網上授課</span></li>
         </ul>
-        <div class="booking-note">
-          <span class="en-only"><b>Online booking calendar:</b> a live scheduler (e.g. Calendly) can be embedded right here — set one up and I'll drop it in.</span>
-          <span class="zh-only"><b>網上預約系統：</b>此處可嵌入即時預約日曆（例如 Calendly）— 開設帳戶後即可加入。</span>
-        </div>
       </div>
       <div class="contact-card">
         <h3><span class="en-only">Send an enquiry</span><span class="zh-only">查詢表格</span></h3>
-        <!-- To make this form live, create a free form endpoint (e.g. Formspree) and replace YOUR_FORM_ID below. -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <div class="field">
-            <label for="f-name"><span class="en-only">Your name</span><span class="zh-only">姓名</span></label>
-            <input id="f-name" name="name" type="text" required autocomplete="name">
-          </div>
-          <div class="field">
-            <label for="f-email"><span class="en-only">Email</span><span class="zh-only">電郵</span></label>
-            <input id="f-email" name="email" type="email" required autocomplete="email">
-          </div>
-          <div class="field">
-            <label for="f-lesson"><span class="en-only">Lesson type</span><span class="zh-only">課程類別</span></label>
-            <select id="f-lesson" name="lesson">
-              <option>Classical vocal · 古典聲樂</option>
-              <option>Musical theatre · 音樂劇</option>
-              <option>Pop singing · 流行唱歌</option>
-              <option>Guzheng · 古箏</option>
-              <option>Not sure yet · 未決定</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-msg"><span class="en-only">Message</span><span class="zh-only">留言</span></label>
-            <textarea id="f-msg" name="message" required placeholder=""></textarea>
-          </div>
-          <button class="btn btn-primary" type="submit">
-            <span class="en-only">Send enquiry</span><span class="zh-only">送出查詢</span>
-          </button>
-        </form>
+        <p class="enquiry-copy">
+          <span class="en-only">Start with a 30-minute taster &amp; assessment (£20), or just say hello — tell me a little about yourself and the lessons you're interested in, and I'll get back to you.</span>
+          <span class="zh-only">由 30 分鐘體驗及評估課（£20）開始，或先來打個招呼 — 簡單介紹一下自己和有興趣的課程，我會盡快回覆。</span>
+        </p>
+        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScktcbq8MN54omGZ3YLSHjaMxyiByJF_ip4aVP_C5UB-DQeSw/viewform" target="_blank" rel="noopener">
+          <span class="en-only">Open enquiry form</span>
+          <span class="zh-only">開啟查詢表格</span>
+        </a>
+        <p class="small">
+          <span class="en-only">Or email me directly — whichever is easier.</span>
+          <span class="zh-only">或直接電郵給我，兩者皆可。</span>
+        </p>
       </div>
     </div>
   </div>
@@ -692,7 +654,7 @@ footer.site .name{font-family:var(--serif);font-size:1.2rem;color:var(--ink);mar
 
 <!-- ======================= FOOTER ======================= -->
 <footer class="site">
-  <p class="name">Giana Yeung</p>
+  <p class="name">GIANA YEUNG</p>
   <p>
     <span class="en-only">Singing &amp; guzheng lessons · Southampton &amp; online worldwide</span>
     <span class="zh-only">唱歌及古箏課程 · 修咸頓及全球網上授課</span>
